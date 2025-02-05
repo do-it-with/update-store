@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .scale-hover {
-    transform: scale(1.12);
-  }
-  .scale-click {
-    transform: scale(0.95);
-  }
+
+/* main #f3f3f3 */
+/* footer #d9d9d9 */
+:root{
+    --main-color: #f3f3f3;
+    --second-color: #d9d9d9;
 }
