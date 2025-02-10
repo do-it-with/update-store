@@ -1,53 +1,37 @@
 {
-  "type": "module",
-  "dependencies": {
-    "axios": "^1.6.8",
-    "bcryptjs": "^2.4.3",
-    "compression": "^1.7.4",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "express-session": "^1.18.0",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.0.0",
-    "nodemon": "^3.0.1",
-    "passport": "^0.7.0",
-    "passport-google-oauth20": "^2.0.0",
-    "redis": "^4.6.13"
-  },
-  "lint-staged": {
-    "**/*.{js,ts,jsx,tsx}": [
-      "npx prettier --write",
-      "eslint --fix"
-    ]
-  },
+  "name": "api",
+  "version": "1.0.0",
+  "description": "FakeStoreAPI is a free online REST API that provides you fake e-commerce JSON data",
+  "main": "server.js",
   "scripts": {
-    "test": "jest --watchAll  --detectOpenHandles --verbose --coverage ",
+    "test": "jest",
     "start": "node server.js",
-    "dev": "nodemon server.js",
-    "check": "prettier --check .",
-    "format": "prettier --write .",
-    "vercel-build": "echo yay"
+    "dev": "nodemon server.js"
   },
-  "jest": {
-    "globalTeardown": "./tests/teardown.js",
-    "transform": {
-      "^.+\\.js?$": "babel-jest"
-    }
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "dotenv-expand": "^8.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.6",
+    "node-fetch": "^2.6.6",
+    "paypal-rest-sdk": "^1.8.1",
+    "request": "^2.88.2",
+    "@solana/web3.js": "^1.95.4",
+    "authrite-js":"^0.4.36",
+    "socket.io-client": "^4.8.1",
+    "form-data":"4.0.1"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.23.2",
-    "@stylistic/eslint-plugin-js": "^2.1.0",
-    "babel-jest": "^29.7.0",
-    "eslint": "^9.3.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-babel": "^5.3.1",
-    "eslint-plugin-prettier": "^5.1.3",
-    "globals": "^15.3.0",
-    "jest": "^29.7.0",
-    "lint-staged": "^15.2.2",
-    "prettier": "^3.2.5",
-    "supertest": "^6.3.3"
+    "ejs": "^3.1.6",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.1.3"
   }
 }
