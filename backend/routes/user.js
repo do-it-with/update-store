@@ -1,20 +1,12 @@
-import { Router } from 'express';
-import { isAdminMiddleware, authMiddleware } from '../middlewares/auth-middleware.js';
-import {
-  changeUserRoleHandler,
-  deleteUserHandler,
-  getAllUserHandler,
-} from '../controllers/user-controller.js';
+const express = require('express')
+const router = express.Router()
+const user = require('../controller/user')
 
-const router = Router();
+// router.get('/',user.getAllUser)
+// router.get('/:id',user.getUser)
+// router.post('/register',user.addUser)
+// router.put('/:id',user.editUser)
+// router.patch('/:id',user.editUser)
+// router.delete('/:id',user.deleteUser)
 
-// get all users
-router.get('/', authMiddleware, isAdminMiddleware, getAllUserHandler);
-
-// change user role
-router.patch('/:userId', authMiddleware, isAdminMiddleware, changeUserRoleHandler);
-
-// delete the user
-router.delete('/:userId', authMiddleware, isAdminMiddleware, deleteUserHandler);
-
-export default router;
+module.exports = router

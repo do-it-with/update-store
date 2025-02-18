@@ -1,29 +1,27 @@
-import { defineConfig, UserConfig } from 'vitest/config';
-import react from '@vitejs/plugin-react-swc';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 import path from 'path';
-import { configDefaults } from 'vitest/config';
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()] as UserConfig['plugins'],
-  test: {
-    environment: 'jsdom',
-    globals: true,
-    coverage: {
-      provider: 'v8',
-    },
-    reporters: ['verbose'],
-    exclude: [
-      ...configDefaults.exclude,
-      './src/__tests__/integration-test/home.test.tsx',
-      './src/__tests__/App.test.tsx',
-    ],
-
-    setupFiles: './test-setup.ts',
-  },
-
+  plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, 'src'),
+      assets: path.resolve('src/assets/'),
+      components: path.resolve('src/components/'),
+      context: path.resolve('src/context/'),
+      db: path.resolve('src/db/'),
+      helpers: path.resolve('src/helpers/'),
+      hooks: path.resolve('src/hooks/'),
+      data: path.resolve('src/data/'),
     },
   },
-});
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/variables.scss";`,
+      },
+    },
+  },
+})
